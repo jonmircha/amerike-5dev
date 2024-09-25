@@ -23,3 +23,16 @@ d.addEventListener("click", function (e) {
   let totalActual = parseFloat($totalCarrito.innerText);
   $totalCarrito.innerText = (totalActual + precio).toFixed(2);
 });
+
+$listaCarrito.addEventListener("click", function (e) {
+  if (e.target.tagName === "LI") {
+    const $item = e.target;
+    $item.remove();
+
+    let precio = parseFloat($item.innerText.split("- $")[1]);
+    //console.log($item.innerText.split("- $"));
+
+    let totalActual = parseFloat($totalCarrito.innerText);
+    $totalCarrito.innerText = (totalActual - precio).toFixed(2);
+  }
+});
