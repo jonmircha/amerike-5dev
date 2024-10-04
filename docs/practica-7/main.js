@@ -13,6 +13,12 @@ const $errorsMessages = d.querySelectorAll(".error");
 
 // Función de Validación del Formulario
 function validateForm(e) {
+  // Reiniciar mensajes de error y éxito
+  $errorsMessages.forEach((el) => {
+    el.innerText = "";
+  });
+  $successMessage.innerText = "";
+
   let isValid = true;
 
   //Validar Nombre
@@ -22,8 +28,12 @@ function validateForm(e) {
   }
 
   //Validar Email
+  let emailPattern = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
   if ($emailInput.value.trim() === "") {
     $emailError.innerText = "El email es obligatorio";
+    isValid = false;
+  } else if (!emailPattern.test($emailInput.value.trim())) {
+    $emailError.innerText = "El formato del correo no es válido";
     isValid = false;
   }
 
@@ -31,12 +41,19 @@ function validateForm(e) {
   if ($passwordInput.value.trim() === "") {
     $passwordError.innerText = "La contraseña es obligatorio";
     isValid = false;
+  } else if ($passwordInput.value.trim().length < 8) {
+    $passwordError.innerText = "La contraseña debe tener al menos 8 caracteres";
+    isValid = false;
   }
 
   //Validar Confirmar Password
+  if ($confirmPasswordInput.value.trim() !== $passwordInput.value.trim()) {
+    $confirmPasswordError.innerText = "Las contraseñas no coinciden";
+    isValid = false;
+  }
 
-  //Prevenir el envío del formulario si hay errores
   if (!isValid) {
+    //Prevenir el envío del formulario si hay errores
     e.preventDefault();
   } else {
     e.preventDefault();
