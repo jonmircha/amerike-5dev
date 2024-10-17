@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programación Asíncrona</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 100%;
+      }
+
+      body {
+        font-family: system-ui, sans-serif;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2vh;
+        margin: 1rem auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Repaso de Peticiones de Datos Asíncronos</h1>
+    <h2>Cargar Datos desde un Archivo JSON</h2>
+    <section id="peliculas" class="grid"></section>
+    <h2>Cargar Datos desde una API REST Externa</h2>
+    <section id="posts" class="grid"></section>
+    <script src="main.js"></script>
+  </body>
+</html>
