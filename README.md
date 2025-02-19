@@ -5,34 +5,38 @@ En este repositorio encontrarás los contenidos de la materia _Metodologías del
 ## Lista de Recursos
 
 - [Slides: Historia de la Web](https://www.figma.com/proto/e84kwrOJGKdVQ1XC13z45E/Historia-de-la-Web?node-id=2-2)
-- [Inteligencia Artificial](./mds/IA.md)
+- [Artículo sobre _VS Code_](https://jonmircha.com/vscode)
+- [Artículo sobre _Terminal_](https://jonmircha.com/terminal)
+- [Artículo sobre _MarkDown_](https://jonmircha.com/markdown)
+- [Artículo sobre _Git_](https://jonmircha.com/git)
+- [Recursos de Inteligencia Artificial](./mds/IA.md)
 
-## Exposiciones del Primer Parcial
+## Exposiciones del Primer Parcial: Martes 04 de Marzo
 
-1. Metodologías Ágiles: SCRUM, Kanban y eXtreme Programming.
+1. Metodologías Ágiles: _SCRUM_, _Kanban_ y _eXtreme Programming_.
    - Leonardo Remirez
    - Jorge Palacios
    - Dante Osornio
    - Antonio Leos
-1. Patrones de Arquitectura: MVC, API REST y Microservicios.
+1. Patrones de Arquitectura: _MVC_, _API REST_ y Microservicios.
    - Rajid Luan
    - Sergio Salazar
    - Juan Primavera
    - Hector Bauchan
-1. Herramientas de Infraestructura en la Nube: GCP, AWS y Azure.
+1. Herramientas de Infraestructura en la Nube: _GCP_, _AWS_ y _Azure_.
    - Mauricio Arellano
    - Diego Ramirez
    - Antonio Perez
    - Diego Wolf
 
-## Exposiciones del Segundo Parcial
+## Exposiciones del Segundo Parcial: Martes 01 de Abril
 
-1. Herramientas de Desarrollo Frontend.
+1. Herramientas de Desarrollo _Frontend_.
    - Rajid Luan
    - Sergio Salazar
    - Juan Primavera
    - Hector Bauchan
-1. Herramientas de Desarrollo Backend.
+1. Herramientas de Desarrollo _Backend_.
    - Mauricio Arellano
    - Diego Ramirez
    - Antonio Perez
