@@ -9,6 +9,7 @@ En este repositorio encontrarás los contenidos de la materia _Metodologías del
 - [Artículo sobre _Terminal_](https://jonmircha.com/terminal)
 - [Artículo sobre _MarkDown_](https://jonmircha.com/markdown)
 - [Artículo sobre _Git_](https://jonmircha.com/git)
+- [Artículo sobre _HTML & CSS_](https://jonmircha.com/html)
 - [Recursos de Inteligencia Artificial](./mds/IA.md)
 
 ## Exposiciones del Primer Parcial: Martes 04 de Marzo
