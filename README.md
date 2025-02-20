@@ -11,6 +11,7 @@ En este repositorio encontrarás los contenidos de la materia _Metodologías del
 - [Artículo sobre _Git_](https://jonmircha.com/git)
 - [Artículo sobre _HTML & CSS_](https://jonmircha.com/html)
 - [Recursos de Inteligencia Artificial](./mds/IA.md)
+- [_URL_ de _GitHub Pages_](https://jonmircha.github.io/amerike-5dev/)
 
 ## Exposiciones del Primer Parcial: Martes 04 de Marzo
 
