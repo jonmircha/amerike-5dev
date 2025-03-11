@@ -12,11 +12,12 @@ En este repositorio encontrarás los contenidos de la materia _Metodologías del
 - [Artículo sobre _HTML & CSS_](https://jonmircha.com/html)
 - [Recursos de Inteligencia Artificial](./mds/IA.md)
 - [_URL_ de _GitHub Pages_](https://jonmircha.github.io/amerike-5dev/)
+- [Introducción a _JavaScript_](./mds/intro-js.md)
 
 ## Exposiciones del Primer Parcial: Martes 04 de Marzo
 
 1. Metodologías Ágiles: _SCRUM_, _Kanban_ y _eXtreme Programming_.
-   - Leonardo Remirez
+   - Leonardo Ramirez
    - Jorge Palacios
    - Dante Osornio
    - Antonio Leos
