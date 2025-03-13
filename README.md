@@ -13,6 +13,7 @@ En este repositorio encontrarás los contenidos de la materia _Metodologías del
 - [Recursos de Inteligencia Artificial](./mds/IA.md)
 - [_URL_ de _GitHub Pages_](https://jonmircha.github.io/amerike-5dev/)
 - [Introducción a _JavaScript_](./mds/intro-js.md)
+- [Introducción al _DOM_](./mds/dom.md)
 
 ## Exposiciones del Primer Parcial: Martes 04 de Marzo
 
