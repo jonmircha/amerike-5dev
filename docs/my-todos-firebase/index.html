@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mis Tareas - My ToDos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>My ToDos</h1>
+        <button id="logout-btn">Cerrar Sesión</button>
+      </header>
+
+      <main>
+        <form id="task-form">
+          <input
+            type="text"
+            id="title"
+            placeholder="Escribe una tarea..."
+            required
+          />
+          <button type="submit">Agregar</button>
+        </form>
+
+        <section class="filters">
+          <label
+            ><input type="radio" name="filter" value="all" checked />
+            Todas</label
+          >
+          <label
+            ><input type="radio" name="filter" value="active" /> Por
+            hacer</label
+          >
+          <label
+            ><input type="radio" name="filter" value="completed" />
+            Hechas</label
+          >
+        </section>
+
+        <ul id="task-list"></ul>
+      </main>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"
+    ></script>
+
+    <!-- Módulo Firebase y lógica principal -->
+    <script defer type="module" src="js/firebase.js"></script>
+    <script defer type="module" src="js/app/index.js"></script>
+  </body>
+</html>

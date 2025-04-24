@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registro - My ToDos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <form id="register-form">
+      <h2>Crear Cuenta</h2>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Correo electrónico"
+      />
+      <input
+        type="password"
+        name="password"
+        required
+        placeholder="Contraseña"
+      />
+      <button type="submit">Registrarse</button>
+    </form>
+    <a href="login.html" class="auth-link"
+      >¿Ya tienes cuenta? Inicia sesión aquí</a
+    >
+
+    <!-- Firebase App (core) -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"
+    ></script>
+    <!-- Firebase Auth -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"
+    ></script>
+    <!-- Firebase Realtime Database -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"
+    ></script>
+
+    <!-- Módulo de inicialización -->
+    <script defer type="module" src="js/firebase.js"></script>
+
+    <!-- Lógica de registro -->
+    <script defer type="module" src="js/auth/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Iniciar Sesión - My ToDos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <form id="login-form">
+      <h2>Iniciar Sesión</h2>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Correo electrónico"
+      />
+      <input
+        type="password"
+        name="password"
+        required
+        placeholder="Contraseña"
+      />
+      <button type="submit">Entrar</button>
+      <button type="button" id="google-login">Entrar con Google</button>
+    </form>
+    <a href="register.html" class="auth-link"
+      >¿No tienes cuenta? Regístrate aquí</a
+    >
+
+    <!-- Firebase App (core) -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"
+    ></script>
+    <!-- Firebase Auth -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"
+    ></script>
+    <!-- Firebase Realtime Database -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"
+    ></script>
+
+    <!-- Módulo de inicialización -->
+    <script defer type="module" src="js/firebase.js"></script>
+
+    <!-- Lógica de login -->
+    <script defer type="module" src="js/auth/login.js"></script>
+  </body>
+</html>
