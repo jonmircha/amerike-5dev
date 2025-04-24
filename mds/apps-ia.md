@@ -3,7 +3,7 @@
 ## _Todo List_ con _Firebase_
 
 Aquí la demo de la app
-(https://jonmircha.github.io/amerike-5dev/my-todos-firebase)[https://jonmircha.github.io/amerike-5dev/my-todos-firebase]
+[https://jonmircha.github.io/amerike-5dev/my-todos-firebase](https://jonmircha.github.io/amerike-5dev/my-todos-firebase)
 
 Puedes ver el código fuente de la app en la siguien [carpeta](../docs/my-todos-firebase/)
 
