@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Entrena tu Glamour</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didot:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body class="admin-body">
+    <!-- Login Modal -->
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-modal">
+            <div class="login-header">
+                <h1>Entrena tu Glamour</h1>
+                <p>Panel Administrativo</p>
+            </div>
+
+            <form class="login-form" id="login-form">
+                <div class="form-group">
+                    <label for="admin-usuario">Usuario</label>
+                    <input
+                        type="text"
+                        id="admin-usuario"
+                        name="usuario"
+                        placeholder="Ingresa tu usuario"
+                        required
+                        autocomplete="username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="admin-password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="recordar" name="recordar">
+                        <span>Recordar sesión (30 min)</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-submit btn-full">
+                    Iniciar Sesión
+                </button>
+
+                <p class="login-error" id="login-error" style="display: none;"></p>
+            </form>
+
+            <div class="login-footer">
+                <p>Acceso exclusivo para personal autorizado</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Principal -->
+    <div class="admin-panel" id="admin-panel" style="display: none;">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-container admin-header-content">
+                <div class="admin-logo">
+                    <span class="admin-logo-glamour">GLAMOUR</span>
+                    <span class="admin-logo-sub">Panel Admin</span>
+                </div>
+
+                <div class="admin-header-actions">
+                    <span class="admin-usuario" id="admin-usuario-display">Admin</span>
+                    <button class="btn btn-secondary btn-sm" id="btn-logout">
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenido Principal -->
+        <main class="admin-main">
+            <div class="admin-container">
+                <!-- Stats -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Registrados</span>
+                        <span class="stat-number" id="stat-total">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Kick Boxing</span>
+                        <span class="stat-number" id="stat-kick">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Yoga</span>
+                        <span class="stat-number" id="stat-yoga">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Pilates</span>
+                        <span class="stat-number" id="stat-pilates">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Zumba</span>
+                        <span class="stat-number" id="stat-zumba">0</span>
+                    </div>
+                </div>
+
+                <!-- Filtros -->
+                <div class="admin-filters">
+                    <h2 class="admin-section-title">Participantes Registrados</h2>
+
+                    <div class="filters-row">
+                        <div class="filter-group">
+                            <label for="filter-disciplina">Disciplina</label>
+                            <select id="filter-disciplina">
+                                <option value="">Todas</option>
+                                <option value="KICK BOXING">Kick Boxing</option>
+                                <option value="YOGA">Yoga</option>
+                                <option value="PILATES">Pilates</option>
+                                <option value="ZUMBA">Zumba</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-bloque">Bloque</label>
+                            <select id="filter-bloque">
+                                <option value="">Todos</option>
+                                <option value="Bloque 1">Bloque 1 (9:00 - 12:00)</option>
+                                <option value="Bloque 2">Bloque 2 (14:00 - 17:00)</option>
+                                <option value="Bloque 3">Bloque 3 (18:00 - 21:00)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-search">Buscar</label>
+                            <input
+                                type="text"
+                                id="filter-search"
+                                placeholder="Email, nombre o apellidos..."
+                            >
+                        </div>
+
+                        <div class="filter-actions">
+                            <button class="btn btn-secondary" id="btn-reset-filters">
+                                Limpiar
+                            </button>
+                            <button class="btn btn-primary" id="btn-export">
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabla -->
+                <div class="admin-table-container">
+                    <table class="admin-table" id="tabla-participantes">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Nacimiento</th>
+                                <th>Disciplina</th>
+                                <th>Bloque</th>
+                                <th>Horario</th>
+                                <th>Fecha Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-body">
+                            <tr class="loading-row">
+                                <td colspan="9">
+                                    <div class="loading-spinner">
+                                        <svg class="spinner" viewBox="0 0 24 24" width="40" height="40">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4 31.4" stroke-linecap="round">
+                                                <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                                            </circle>
+                                        </svg>
+                                        <span>Cargando participantes...</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Mensaje sin datos -->
+                    <div class="no-data" id="no-data" style="display: none;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <h3>No hay participantes registrados</h3>
+                        <p>Los registros aparecerán aquí una vez que los usuarios completen el formulario</p>
+                    </div>
+
+                    <!-- Mensaje error -->
+                    <div class="error-data" id="error-data" style="display: none;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <h3>Error al cargar datos</h3>
+                        <p id="error-message">No se pudo conectar con la base de datos</p>
+                        <button class="btn btn-primary" onclick="cargarParticipantes()">
+                            Reintentar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Editar -->
+    <div class="modal-overlay" id="modal-editar" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Registro</h3>
+                <button class="modal-close" id="modal-cerrar">&times;</button>
+            </div>
+
+            <form class="modal-form" id="form-editar">
+                <input type="hidden" id="edit-email-original">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-nombre">Nombre *</label>
+                        <input type="text" id="edit-nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-apellidos">Apellidos *</label>
+                        <input type="text" id="edit-apellidos" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-email">Email *</label>
+                        <input type="email" id="edit-email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-nacimiento">Fecha Nacimiento *</label>
+                        <input type="date" id="edit-nacimiento" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-disciplina">Disciplina *</label>
+                        <select id="edit-disciplina" required>
+                            <option value="">Seleccionar</option>
+                            <option value="KICK BOXING">Kick Boxing</option>
+                            <option value="YOGA">Yoga</option>
+                            <option value="PILATES">Pilates</option>
+                            <option value="ZUMBA">Zumba</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-bloque">Bloque *</label>
+                        <select id="edit-bloque" required>
+                            <option value="">Seleccionar</option>
+                            <option value="1K">Bloque 1 - Kick Boxing</option>
+                            <option value="1Y">Bloque 1 - Yoga</option>
+                            <option value="1P">Bloque 1 - Pilates</option>
+                            <option value="1Z">Bloque 1 - Zumba</option>
+                            <option value="2K">Bloque 2 - Kick Boxing</option>
+                            <option value="2Y">Bloque 2 - Yoga</option>
+                            <option value="2P">Bloque 2 - Pilates</option>
+                            <option value="2Z">Bloque 2 - Zumba</option>
+                            <option value="3K">Bloque 3 - Kick Boxing</option>
+                            <option value="3Y">Bloque 3 - Yoga</option>
+                            <option value="3P">Bloque 3 - Pilates</option>
+                            <option value="3Z">Bloque 3 - Zumba</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-cancelar">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Guardar Cambios
+                    </button>
+                </div>
+
+                <p class="modal-error" id="modal-error" style="display: none;"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" style="display: none;">
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="app/admin.js"></script>
+</body>
+</html>

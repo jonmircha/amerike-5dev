@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regístrate al evento fitness 'Entrena tu Glamour' organizado por GLAMOUR México con Adidas e Innova Sport. Kick Boxing, Yoga, Pilates y Zumba.">
+    <title>Entrena tu Glamour | Registro Oficial</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didot:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Hero Section con Video de Fondo -->
+    <header class="hero">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
+                <source src="https://videos.pexels.com/video-files/5093096/5093096-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/5093096/5093096-sd_640_360_25fps.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <nav class="hero-nav">
+            <div class="container nav-container">
+                <div class="logo">
+                    <svg class="logo-svg" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                        <text x="200" y="50" text-anchor="middle" class="logo-main">ENTRENA TU</text>
+                        <text x="200" y="95" text-anchor="middle" class="logo-glamour">GLAMOUR</text>
+                        <text x="200" y="115" text-anchor="middle" class="logo-mexico">MÉXICO</text>
+                    </svg>
+                </div>
+                <a href="#registro" class="btn btn-nav">Registrarme</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="hero-subtitle">Vive la experiencia</span>
+                    <span class="hero-highlight">fitness definitiva</span>
+                </h1>
+                <p class="hero-description">
+                    Únete a nosotras en el evento más exclusivo del año.
+                    Entrena con las mejores marcas: <strong>GLAMOUR México</strong>,
+                    <strong>Adidas</strong> e <strong>Innova Sport</strong>.
+                </p>
+
+                <!-- Countdown -->
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Min</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seg</span>
+                    </div>
+                </div>
+
+                <!-- Logos de patrocinadores -->
+                <div class="sponsors-hero">
+                    <span class="sponsors-label">Patrocinadores oficiales</span>
+                    <div class="sponsors-logos">
+                        <div class="sponsor-badge">GLAMOUR México</div>
+                        <div class="sponsor-badge">adidas</div>
+                        <div class="sponsor-badge">Innova Sport</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>Desliza para registrarte</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Sección de Disciplinas -->
+    <section class="disciplinas" id="disciplinas">
+        <div class="container">
+            <h2 class="section-title">Elige tu disciplina</h2>
+            <p class="section-description">
+                Cuatro experiencias únicas diseñadas para desafiar tu cuerpo y mente
+            </p>
+
+            <div class="disciplinas-grid">
+                <div class="disciplina-card" data-disciplina="KICK BOXING">
+                    <div class="disciplina-icon">🥊</div>
+                    <h3>Kick Boxing</h3>
+                    <p>Libera tu poder con esta disciplina de alto impacto que combina boxeo y artes marciales.</p>
+                    <span class="disciplina-cupo">10 lugares por bloque</span>
+                </div>
+
+                <div class="disciplina-card" data-disciplina="YOGA">
+                    <div class="disciplina-icon">🧘</div>
+                    <h3>Yoga</h3>
+                    <p>Conecta cuerpo y mente mediante posturas, respiración y meditación guiada.</p>
+                    <span class="disciplina-cupo">20 lugares por bloque</span>
+                </div>
+
+                <div class="disciplina-card" data-disciplina="PILATES">
+                    <div class="disciplina-icon">🤸</div>
+                    <h3>Pilates</h3>
+                    <p>Fortalece tu core y mejora tu postura con ejercicios de control y precisión.</p>
+                    <span class="disciplina-cupo">10 lugares por bloque</span>
+                </div>
+
+                <div class="disciplina-card" data-disciplina="ZUMBA">
+                    <div class="disciplina-icon">💃</div>
+                    <h3>Zumba</h3>
+                    <p>Baila, quema calorías y diviértete con coreografías latinas energizantes.</p>
+                    <span class="disciplina-cupo">10 lugares por bloque</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Registro -->
+    <section class="registro" id="registro">
+        <div class="container">
+            <div class="registro-wrapper">
+                <div class="registro-header">
+                    <h2 class="section-title">Registro</h2>
+                    <p class="section-description">
+                        Completa el formulario y asegura tu lugar en este evento exclusivo
+                    </p>
+                </div>
+
+                <!-- Formulario -->
+                <form class="registro-form" id="registroForm" novalidate>
+                    <!-- Datos Personales -->
+                    <div class="form-section">
+                        <h4 class="form-section-title">Datos Personales</h4>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre *</label>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    placeholder="Tu nombre"
+                                    required
+                                    autocomplete="given-name"
+                                >
+                                <span class="error-message" id="error-nombre"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos *</label>
+                                <input
+                                    type="text"
+                                    id="apellidos"
+                                    name="apellidos"
+                                    placeholder="Tus apellidos"
+                                    required
+                                    autocomplete="family-name"
+                                >
+                                <span class="error-message" id="error-apellidos"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tu@email.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                                <span class="error-message" id="error-email"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nacimiento">Fecha de Nacimiento *</label>
+                                <input
+                                    type="date"
+                                    id="nacimiento"
+                                    name="nacimiento"
+                                    required
+                                >
+                                <span class="error-message" id="error-nacimiento"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selección de Actividad -->
+                    <div class="form-section">
+                        <h4 class="form-section-title">Selecciona tu Actividad</h4>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="disciplina">Disciplina *</label>
+                                <select id="disciplina" name="disciplina" required>
+                                    <option value="">Selecciona una disciplina</option>
+                                    <option value="KICK BOXING">🥊 Kick Boxing</option>
+                                    <option value="YOGA">🧘 Yoga</option>
+                                    <option value="PILATES">🤸 Pilates</option>
+                                    <option value="ZUMBA">💃 Zumba</option>
+                                </select>
+                                <span class="error-message" id="error-disciplina"></span>
+                            </div>
+                        </div>
+
+                        <!-- Bloques Horarios (se cargan dinámicamente) -->
+                        <div class="form-group full-width" id="bloques-container" style="display: none;">
+                            <label>Bloque Horario *</label>
+                            <div class="bloques-options" id="bloques-options">
+                                <!-- Se llena dinámicamente con JS -->
+                            </div>
+                            <span class="error-message" id="error-bloque"></span>
+                        </div>
+
+                        <!-- Lugares disponibles -->
+                        <div class="cupos-info" id="cupos-info" style="display: none;">
+                            <h5>Lugares disponibles:</h5>
+                            <div class="cupos-grid" id="cupos-grid">
+                                <!-- Se llena dinámicamente con JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-submit" id="btn-submit">
+                            <span class="btn-text">Confirmar Registro</span>
+                            <span class="btn-loading" style="display: none;">
+                                <svg class="spinner" viewBox="0 0 24 24" width="20" height="20">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4 31.4" stroke-linecap="round">
+                                        <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                                Procesando...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Mensaje de Éxito -->
+                <div class="success-message" id="success-message" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>¡Registro Exitoso! 🎉</h3>
+                    <p>Te hemos enviado un correo de confirmación.</p>
+                    <p class="success-details" id="success-details"></p>
+                    <button class="btn btn-secondary" onclick="location.reload()">
+                        Registrar otra persona
+                    </button>
+                </div>
+
+                <!-- Mensaje de Error -->
+                <div class="error-message-box" id="error-message-box" style="display: none;">
+                    <div class="error-icon">!</div>
+                    <h3 id="error-title">Error</h3>
+                    <p id="error-description"></p>
+                    <button class="btn btn-secondary" onclick="document.getElementById('error-message-box').style.display='none'">
+                        Intentar de nuevo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>Entrena tu Glamour</h4>
+                    <p>El evento fitness más exclusivo de México</p>
+                </div>
+
+                <div class="footer-sponsors">
+                    <span class="sponsors-label">Patrocinadores oficiales</span>
+                    <div class="sponsors-logos">
+                        <span class="sponsor-badge">GLAMOUR México</span>
+                        <span class="sponsor-badge">adidas</span>
+                        <span class="sponsor-badge">Innova Sport</span>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <p>¿Dudas? <a href="mailto:contacto@entrenatumglamour.mx">contacto@entrenatumglamour.mx</a></p>
+                </div>
+
+                <div class="footer-copy">
+                    <p>&copy; 2026 Entrena tu Glamour. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="app/main.js"></script>
+</body>
+</html>
